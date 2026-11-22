@@ -1,0 +1,96 @@
+classDiagram
+direction TB
+
+class Chamado {
+  <<abstract>>
+  +int id
+  #str _titulo
+  #str _descricao
+  #str _status
+  #str _solucao
+  #datetime _aberto_em
+  #datetime _fechado_em
+  +prazo_sla()* int
+  +prazo_limite() datetime
+  +fora_do_prazo(agora) bool
+  +atribuir(tecnico, abertos) void
+  +fechar(solucao) void
+  +garantir_editavel() void
+  +to_dict() dict
+  +resumo() dict
+}
+class Hardware {
+  +SLA_HORAS = 48
+  +prazo_sla() int
+}
+class Software {
+  +SLA_HORAS = 24
+  +prazo_sla() int
+}
+class Rede {
+  +SLA_HORAS = 8
+  +prazo_sla() int
+}
+class Solicitante {
+  +int id
+  #str _nome
+  #str _email
+  +to_dict() dict
+}
+class Tecnico {
+  +MAX_ABERTOS = 5
+  +int id
+  #str _nome
+  +validar_capacidade(abertos) void
+  +to_dict() dict
+}
+
+Chamado <|-- Hardware
+Chamado <|-- Software
+Chamado <|-- Rede
+Chamado "1" *-- "1" Solicitante : solicitante
+Chamado "1" *-- "0..1" Tecnico : tecnico
+
+class Repositorio {
+  <<abstract>>
+  +listar()* list
+  +buscar(id)* dict
+  +salvar(registro)* dict
+  +remover(id)* bool
+}
+class RepositorioJson {
+  -Path _caminho
+  +listar() list
+  +buscar(id) dict
+  +salvar(registro) dict
+  +remover(id) bool
+}
+Repositorio <|-- RepositorioJson
+
+class ChamadoController {
+  +listar(tipo) list
+  +buscar(id) Chamado
+  +criar(...) Chamado
+  +alterar(id, ...) Chamado
+  +remover(id) void
+  +fechar(id, solucao) Chamado
+  +fora_do_prazo() list
+}
+ChamadoController ..> Chamado : usa
+ChamadoController --> Repositorio : persiste em
+
+class ErroNegocio {
+  +str mensagem
+}
+class NaoEncontradoErro {
+  HTTP 404
+}
+class ConflitoErro {
+  HTTP 409
+}
+class DadoInvalidoErro {
+  HTTP 422
+}
+ErroNegocio <|-- NaoEncontradoErro
+ErroNegocio <|-- ConflitoErro
+ErroNegocio <|-- DadoInvalidoErro
