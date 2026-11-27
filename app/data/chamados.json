@@ -1,1 +1,110 @@
-[]
+[
+  {
+    "id": 1,
+    "tipo": "rede",
+    "titulo": "Wi-Fi caiu no bloco B",
+    "descricao": "Rede eduroam sem sinal nas salas B1 a B6 desde o início da aula.",
+    "solicitante_id": 2,
+    "tecnico_id": 1,
+    "status": "fechado",
+    "solucao": "Access point do corredor B reiniciado e firmware atualizado.",
+    "aberto_em": "2026-11-16T08:10:00",
+    "fechado_em": "2026-11-16T11:40:00"
+  },
+  {
+    "id": 2,
+    "tipo": "software",
+    "titulo": "Python não abre no laboratório 3",
+    "descricao": "Atalho do Python 3.12 dá erro de DLL ausente nas máquinas do lab 3.",
+    "solicitante_id": 1,
+    "tecnico_id": 2,
+    "status": "fechado",
+    "solucao": "Reinstalado o Python 3.12 com o pacote redistribuível do Visual C++.",
+    "aberto_em": "2026-11-17T13:00:00",
+    "fechado_em": "2026-11-19T09:30:00"
+  },
+  {
+    "id": 3,
+    "tipo": "hardware",
+    "titulo": "Projetor da sala 12 sem imagem",
+    "descricao": "Projetor liga mas não exibe imagem pelo HDMI nem pelo VGA.",
+    "solicitante_id": 2,
+    "tecnico_id": 1,
+    "status": "em_andamento",
+    "solucao": null,
+    "aberto_em": "2026-11-18T19:05:00",
+    "fechado_em": null
+  },
+  {
+    "id": 4,
+    "tipo": "rede",
+    "titulo": "Laboratório 5 sem internet",
+    "descricao": "Nenhuma das 30 máquinas do lab 5 acessa a internet; rede interna funciona.",
+    "solicitante_id": 3,
+    "tecnico_id": 1,
+    "status": "em_andamento",
+    "solucao": null,
+    "aberto_em": "2026-11-24T07:50:00",
+    "fechado_em": null
+  },
+  {
+    "id": 5,
+    "tipo": "software",
+    "titulo": "Licença do pacote Office expirada",
+    "descricao": "Computadores da secretaria exibem aviso de licença expirada no Word.",
+    "solicitante_id": 4,
+    "tecnico_id": 2,
+    "status": "em_andamento",
+    "solucao": null,
+    "aberto_em": "2026-11-25T10:20:00",
+    "fechado_em": null
+  },
+  {
+    "id": 6,
+    "tipo": "hardware",
+    "titulo": "Teclado com teclas travando",
+    "descricao": "Máquina 14 do lab 2 com teclas Enter e Espaço travando.",
+    "solicitante_id": 5,
+    "tecnico_id": null,
+    "status": "aberto",
+    "solucao": null,
+    "aberto_em": "2026-11-26T15:45:00",
+    "fechado_em": null
+  },
+  {
+    "id": 7,
+    "tipo": "software",
+    "titulo": "Acesso ao SIGA bloqueado",
+    "descricao": "Aluno não consegue entrar no SIGA após troca de senha.",
+    "solicitante_id": 5,
+    "tecnico_id": 3,
+    "status": "em_andamento",
+    "solucao": null,
+    "aberto_em": "2026-11-26T18:30:00",
+    "fechado_em": null
+  },
+  {
+    "id": 8,
+    "tipo": "hardware",
+    "titulo": "Impressora da biblioteca atolando papel",
+    "descricao": "Impressora atola a cada 3 ou 4 folhas impressas.",
+    "solicitante_id": 4,
+    "tecnico_id": 1,
+    "status": "em_andamento",
+    "solucao": null,
+    "aberto_em": "2026-11-20T09:00:00",
+    "fechado_em": null
+  },
+  {
+    "id": 9,
+    "tipo": "rede",
+    "titulo": "Ponto de rede da sala dos professores",
+    "descricao": "Tomada de rede da mesa 3 sem link.",
+    "solicitante_id": 2,
+    "tecnico_id": 1,
+    "status": "em_andamento",
+    "solucao": null,
+    "aberto_em": "2026-11-27T08:00:00",
+    "fechado_em": null
+  }
+]

@@ -1,1 +1,5 @@
-[]
+[
+  {"id": 1, "nome": "Marcos Lima"},
+  {"id": 2, "nome": "Patrícia Rocha"},
+  {"id": 3, "nome": "Rafael Santos"}
+]
