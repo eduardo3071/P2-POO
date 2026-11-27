@@ -63,3 +63,7 @@ def criar_solicitante(dados: SolicitanteCriar):
 @router.post("/tecnicos", status_code=status.HTTP_201_CREATED, tags=["Pessoas"])
 def criar_tecnico(dados: TecnicoCriar):
     return pessoas.criar_tecnico(dados.nome).to_dict()
+
+@router.get("/tecnicos", tags=["Pessoas"])
+def listar_tecnicos():
+    return [t.to_dict() for t in pessoas.listar_tecnicos()]
