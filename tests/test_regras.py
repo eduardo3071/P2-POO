@@ -211,3 +211,13 @@ def test_dados_continuam_depois_de_reiniciar(tmp_path):
     RepositorioJson(caminho).salvar({"nome": "persistido"})
     reaberto = RepositorioJson(caminho)  # simula reiniciar o servidor
     assert reaberto.listar() == [{"nome": "persistido", "id": 1}]
+
+def test_listar_tecnicos(tmp_path):
+    pessoas = PessoaController(
+        RepositorioJson(tmp_path / "solicitantes.json"), 
+        RepositorioJson(tmp_path / "tecnicos.json")
+    )
+    pessoas.criar_tecnico("Carlos Lima")
+    pessoas.criar_tecnico("Beatriz Silva")
+    tecnicos = pessoas.listar_tecnicos()
+    assert [t.nome for t in pessoas.listar_tecnicos()] == ["Carlos Lima", "Beatriz Silva"]
